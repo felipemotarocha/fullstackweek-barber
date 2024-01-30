@@ -2,32 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  .dark {
+    --background: 225 9% 9%;
+    --foreground: 210 40% 98%;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --card: 228 9% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 228 9% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 100% 69%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 228 6% 16%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 228 6% 16%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 228 6% 16%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 228 6% 16%;
+    --input: 228 6% 16%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
   }
 }
