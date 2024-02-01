@@ -15,7 +15,7 @@ export const saveBooking = async (params: SaveBookingParams) => {
       serviceId: params.serviceId,
       userId: params.userId,
       date: params.date,
-      babershopId: params.barbershopId,
+      barbershopId: params.barbershopId,
     },
   });
 };
